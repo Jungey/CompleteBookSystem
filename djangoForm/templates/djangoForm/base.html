@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Book List</title>
+</head>
+<body>
+    <div class="container">
+      <a href="{% url 'addbook' %}">Add Book</a>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Edition</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in booklist %}
+                <tr>
+                  <th scope="row">{{i.id}}</th>
+                  <td>{{i.title}}</td>
+                  <td>{{i.author}}</td>
+                  <td>{{i.edition}}</td>
+                  <td>{{i.price}}</td>
+                </tr>
+              {% endfor %}
+            
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
